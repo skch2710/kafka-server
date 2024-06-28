@@ -1,0 +1,33 @@
+server:
+  port: 8096
+
+app:
+  publishing_topic: publishing_topic
+  receiving_topic: receiving_topic
+
+
+spring:
+  datasource:
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME}
+    url: ${JDBC_CONNECTION_STRING}
+  jpa:
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  application:
+    name: kafka-server
+  kafka:
+    bootstrap-servers: 172.20.70.149:9092
+    consumer:
+#      bootstrap-servers: 172.20.70.149:9092
+      group-id: my-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+#      bootstrap-servers: 172.20.70.149:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

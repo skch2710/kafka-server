@@ -1,0 +1,50 @@
+1. Install Ubuntu 22 LTE on Windows OS 
+2. The Windows Subsystem for Linux has not been enabled. --> Enable it
+	
+	Press Win + X and select Windows Terminal (Admin) or PowerShell (Admin).
+	Run the WSL Installation Command:
+		wsl --install
+	
+	Restart Your Computer
+3. Set the Password for Ubuntu.
+4. Install Java 
+	$ sudo apt update
+	$ sudo apt install openjdk-17-jre
+5. https://www.confluent.io/download 
+6. Download Tar
+7.  cp /mnt/d/Sathish/confluent-7.6.1.tar .
+8. tar -zxvf confluent-7.6.1.tar
+9. ll
+10. nano .profile
+	
+	export CONFLUENT_HOME=/home/sathish/confluent-7.6.1
+	export PATH=$PATH:$CONFLUENT_HOME/bin
+11. echo $CONFLUENT_HOME
+
+12. nano /home/sathish/confluent-7.6.1/etc/kafka/server.properties
+
+13. confluent local services start
+14. localhost:9021
+15. confluent local services stop
+
+
+172.20.79.255
+
+netsh interface portproxy add v4tov4 listenport=9092 listenaddress=0.0.0.0 connectport=9092 connectaddress=172.20.70.149
+
+********************************
+
+ip addr
+
+ip addr | grep eth0
+
+ipconfig
+
+
+==> Open Windows Defender Firewall and add rule WSL2 9092 , 
+	TCP/IP Port --> 9092
+ 
+
+
+
+
