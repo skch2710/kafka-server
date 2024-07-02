@@ -31,3 +31,7 @@ spring:
 #      bootstrap-servers: 172.20.70.149:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+  threads:
+    virtual:
+      enabled: true
